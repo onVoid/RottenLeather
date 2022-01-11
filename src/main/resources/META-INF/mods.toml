@@ -1,0 +1,33 @@
+modLoader="javafml"
+loaderVersion="[39,)"
+license="MIT License"
+issueTrackerURL="https://github.com/onVoid/CoppersDelight/issues"
+
+
+[[mods]]
+modId="coppersdelight"
+version="${file.jarVersion}"
+displayName="Copper's Delight"
+displayURL="https://github.com/onVoid/CoppersDelight"
+updateJSONURL="https://onvoid.net/coppersdelight/update.json"
+logoFile="coppersdelight.png"
+logoBlur=false
+credits="vectorwing - Farmer's Delight creator"
+authors="onVoid"
+description="Adds a Copper Knife to Farmer's Delight."
+itemIcon="coppersdelight:copper_knife"
+configBackground="minecraft:textures/block/bricks.png"
+
+[[dependencies.coppersdelight]]
+    modId="forge"
+    mandatory=true
+    versionRange="[39,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.coppersdelight]]
+    modId="farmersdelight"
+    mandatory=true
+    versionRange="[1.0,]"
+    ordering="AFTER"
+    side="BOTH"

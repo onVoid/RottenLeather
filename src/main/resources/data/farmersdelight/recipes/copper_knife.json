@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " m",
+    "s "
+  ],
+  "key": {
+    "m": {
+      "tag": "forge:ingots/copper"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "coppersdelight:copper_knife"
+  }
+}
