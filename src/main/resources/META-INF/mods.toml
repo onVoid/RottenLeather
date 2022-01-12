@@ -8,7 +8,7 @@ issueTrackerURL="https://github.com/onVoid/CoppersDelight/issues"
 modId="coppersdelight"
 version="${file.jarVersion}"
 displayName="Copper's Delight"
-displayURL="https://github.com/onVoid/CoppersDelight"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/coppers-delight"
 updateJSONURL="https://onvoid.net/coppersdelight/update.json"
 logoFile="coppersdelight.png"
 logoBlur=false
@@ -28,6 +28,6 @@ configBackground="minecraft:textures/block/bricks.png"
 [[dependencies.coppersdelight]]
     modId="farmersdelight"
     mandatory=true
-    versionRange="[1.0,]"
+    versionRange="[1.18.1-1.0,]"
     ordering="AFTER"
     side="BOTH"
