@@ -1,4 +1,4 @@
-package net.onvoid.coppersdelight.proxy;
+package net.onvoid.rottenleather.proxy;
 
 public class ClientProxy extends CommonProxy {
 

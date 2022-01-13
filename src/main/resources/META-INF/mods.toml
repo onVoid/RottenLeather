@@ -1,33 +1,26 @@
 modLoader="javafml"
 loaderVersion="[39,)"
 license="MIT License"
-issueTrackerURL="https://github.com/onVoid/CoppersDelight/issues"
+issueTrackerURL="https://github.com/onVoid/RottenLeather/issues"
 
 
 [[mods]]
-modId="coppersdelight"
+modId="rottenleather"
 version="${file.jarVersion}"
-displayName="Copper's Delight"
-displayURL="https://www.curseforge.com/minecraft/mc-mods/coppers-delight"
-updateJSONURL="https://onvoid.net/coppersdelight/update.json"
-logoFile="coppersdelight.png"
+displayName="Rotten Leather"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/rotten-leather"
+updateJSONURL="https://onvoid.net/rottenleather/update.json"
+logoFile="rottenleather.png"
 logoBlur=false
-credits="vectorwing - Farmer's Delight creator"
+credits="onVoid"
 authors="onVoid"
-description="Adds a Copper Knife to Farmer's Delight."
-itemIcon="coppersdelight:copper_knife"
-configBackground="minecraft:textures/block/bricks.png"
+description="Adds a way to convert Rotten Flesh into leather or food."
+itemIcon="rottenleather:rotten_chunk"
+configBackground="minecraft:textures/block/stone.png"
 
 [[dependencies.coppersdelight]]
     modId="forge"
     mandatory=true
     versionRange="[39,)"
     ordering="NONE"
-    side="BOTH"
-
-[[dependencies.coppersdelight]]
-    modId="farmersdelight"
-    mandatory=true
-    versionRange="[1.18.1-1.0,]"
-    ordering="AFTER"
     side="BOTH"

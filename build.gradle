@@ -14,8 +14,8 @@ apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
 version = "${mc_version}-${mod_version}"
-group = 'net.onvoid.coppersdelight'
-archivesBaseName = 'CoppersDelight'
+group = 'net.onvoid.rottenleather'
+archivesBaseName = 'RottenLeather'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
@@ -28,7 +28,7 @@ minecraft {
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
             mods {
-                coppersdelight {
+                rottenleather {
                     source sourceSets.main
                 }
             }
@@ -39,7 +39,7 @@ minecraft {
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
             mods {
-                coppersdelight {
+                rottenleather {
                     source sourceSets.main
                 }
             }
@@ -51,7 +51,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
             args '--mod', 'simplicity', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
             mods {
-                coppersdelight {
+                rottenleather {
                     source sourceSets.main
                 }
             }
@@ -82,16 +82,12 @@ repositories {
 
 dependencies {
     minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
-    implementation fg.deobf("curse.maven:farmers-delight-398521:3590226")
-    compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api")
-    // at runtime, use the full JEI jar
-    runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}")
 }
 
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : "coppersdelight",
+                "Specification-Title"     : "rottenleather",
                 "Specification-Vendor"    : "onVoid",
                 "Specification-Version"   : "1",
                 "Implementation-Title"    : project.name,

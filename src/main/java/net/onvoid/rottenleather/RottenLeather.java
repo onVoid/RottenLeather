@@ -1,21 +1,21 @@
-package net.onvoid.coppersdelight;
+package net.onvoid.rottenleather;
 
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
-import net.onvoid.coppersdelight.proxy.ClientProxy;
-import net.onvoid.coppersdelight.proxy.CommonProxy;
+import net.onvoid.rottenleather.proxy.ClientProxy;
+import net.onvoid.rottenleather.proxy.CommonProxy;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@Mod("coppersdelight")
-public class CoppersDelight
+@Mod("rottenleather")
+public class RottenLeather
 {
-    public static final String MODID = "coppersdelight";
-    public static CoppersDelight instance;
+    public static final String MODID = "rottenleather";
+    public static RottenLeather instance;
     public static CommonProxy proxy;
     private static final Logger LOGGER = LogManager.getLogger();
 
-    public CoppersDelight() {
+    public RottenLeather() {
         instance = this;
 
         proxy = DistExecutor.safeRunForDist(() -> ClientProxy::new, () -> CommonProxy::new);

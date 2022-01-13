@@ -1,4 +1,4 @@
-# Copper's Delight
-Adds a Copper Knife to Farmer's Delight.
+# Rotten Leather
+Adds a way to convert Rotten Flesh into leather or food.
 
-<img src="https://onvoid.net/coppersdelight/logo.png" height="50px" />
+<img src="https://onvoid.net/rottenleather/logo.png" height="50px" />
