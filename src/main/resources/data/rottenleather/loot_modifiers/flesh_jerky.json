@@ -1,0 +1,30 @@
+{
+  "conditions": [
+    {
+      "condition": "minecraft:alternative",
+      "terms": [
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:chests/desert_pyramid"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:chests/simple_dungeon"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:chests/village/village_butcher"
+        }
+      ]
+    },
+    {
+      "condition": "minecraft:random_chance",
+      "chance": 0.3
+    }
+  ],
+  "type": "rottenleather:add_item",
+  "item": "rottenleather:flesh_jerky",
+  "minAmount": 2,
+  "maxAmount": 4,
+  "unique": true
+}
