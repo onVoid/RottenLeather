@@ -14,7 +14,7 @@ logoFile="rottenleather.png"
 logoBlur=false
 credits="onVoid"
 authors="onVoid"
-description="Adds a way to convert Rotten Flesh into leather or food."
+description="Adds a way to convert Rotten Flesh into Leather or food."
 itemIcon="rottenleather:rotten_chunk"
 configBackground="minecraft:textures/block/stone.png"
 
