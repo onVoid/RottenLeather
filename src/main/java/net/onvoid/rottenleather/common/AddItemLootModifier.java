@@ -1,12 +1,12 @@
 package net.onvoid.rottenleather.common;
 
 import com.google.gson.JsonObject;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.GsonHelper;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.storage.loot.LootContext;
-import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.loot.LootContext;
+import net.minecraft.loot.conditions.ILootCondition;
+import net.minecraft.util.JSONUtils;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.common.loot.LootModifier;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -20,7 +20,7 @@ public class AddItemLootModifier extends LootModifier {
     private final int maxAmount;
     private final boolean unique;
 
-    public AddItemLootModifier(LootItemCondition[] conditions, Item item, int minAmount, int maxAmount, boolean unique) {
+    public AddItemLootModifier(ILootCondition[] conditions, Item item, int minAmount, int maxAmount, boolean unique) {
         super(conditions);
         this.item = item;
         this.minAmount = minAmount;
@@ -31,7 +31,6 @@ public class AddItemLootModifier extends LootModifier {
     @Nonnull
     @Override
     public List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context) {
-        System.out.println("Applying " + context.getQueriedLootTableId().toString());
         if ((this.unique && generatedLoot.stream().anyMatch(stack -> stack.getItem().equals(this.item))) || (this.maxAmount < 1)) {
             return generatedLoot;
         }
@@ -45,11 +44,11 @@ public class AddItemLootModifier extends LootModifier {
     public static class Serializer extends GlobalLootModifierSerializer<AddItemLootModifier> {
 
         @Override
-        public AddItemLootModifier read(ResourceLocation name, JsonObject object, LootItemCondition[] conditions) {
-            Item item = ForgeRegistries.ITEMS.getValue(new ResourceLocation((GsonHelper.getAsString(object, "item"))));
-            int minAmount = GsonHelper.getAsInt(object, "minAmount");
-            int maxAmount = GsonHelper.getAsInt(object, "maxAmount");
-            boolean unique = GsonHelper.getAsBoolean(object, "unique");
+        public AddItemLootModifier read(ResourceLocation name, JsonObject object, ILootCondition[] conditions) {
+            Item item = ForgeRegistries.ITEMS.getValue(new ResourceLocation((JSONUtils.getAsString(object, "item"))));
+            int minAmount = JSONUtils.getAsInt(object, "minAmount");
+            int maxAmount = JSONUtils.getAsInt(object, "maxAmount");
+            boolean unique = JSONUtils.getAsBoolean(object, "unique");
             return new AddItemLootModifier(conditions, item, minAmount, maxAmount, unique);
         }
 
