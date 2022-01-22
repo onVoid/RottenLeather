@@ -31,7 +31,6 @@ public class AddItemLootModifier extends LootModifier {
     @Nonnull
     @Override
     public List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context) {
-        System.out.println("Applying " + context.getQueriedLootTableId().toString());
         if ((this.unique && generatedLoot.stream().anyMatch(stack -> stack.getItem().equals(this.item))) || (this.maxAmount < 1)) {
             return generatedLoot;
         }
