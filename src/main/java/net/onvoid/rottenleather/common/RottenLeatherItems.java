@@ -1,15 +1,15 @@
 package net.onvoid.rottenleather.common;
 
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
-import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraft.item.Food;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
+import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
 import net.onvoid.rottenleather.RottenLeather;
+import net.minecraftforge.eventbus.api.IEventBus;
 
 public class RottenLeatherItems {
 
@@ -17,28 +17,28 @@ public class RottenLeatherItems {
 
     public static final RegistryObject<Item> ROTTEN_CHUNK = ITEMS.register("rotten_chunk", () ->
             new Item((new Item.Properties())
-                    .tab(CreativeModeTab.TAB_FOOD)
-                    .food((new FoodProperties.Builder())
+                    .tab(ItemGroup.TAB_FOOD)
+                    .food((new Food.Builder())
                             .nutrition(8)
                             .saturationMod(0.1F)
-                            .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.8F)
+                            .effect(() -> new EffectInstance(Effects.HUNGER, 600, 0), 0.8F)
                             .meat()
                             .build())));
 
     public static final RegistryObject<Item> SWEETENED_CHUNK = ITEMS.register("sweetened_chunk", () ->
             new Item((new Item.Properties())
-                    .tab(CreativeModeTab.TAB_FOOD)
-                    .food((new FoodProperties.Builder())
+                    .tab(ItemGroup.TAB_FOOD)
+                    .food((new Food.Builder())
                             .nutrition(8)
                             .saturationMod(0.3F)
-                            .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.4F)
+                            .effect(() -> new EffectInstance(Effects.HUNGER, 600, 0), 0.4F)
                             .meat()
                             .build())));
 
     public static final RegistryObject<Item> FLESH_JERKY = ITEMS.register("flesh_jerky", () ->
             new Item((new Item.Properties())
-                    .tab(CreativeModeTab.TAB_FOOD)
-                    .food((new FoodProperties.Builder())
+                    .tab(ItemGroup.TAB_FOOD)
+                    .food((new Food.Builder())
                             .nutrition(8)
                             .saturationMod(0.5F)
                             .meat()
