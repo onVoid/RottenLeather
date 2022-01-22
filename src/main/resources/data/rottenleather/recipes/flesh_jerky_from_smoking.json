@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": {
+    "item": "rottenleather:sweetened_chunk"
+  },
+  "result": "rottenleather:flesh_jerky",
+  "experience": 0.35,
+  "cookingtime": 100
+}
