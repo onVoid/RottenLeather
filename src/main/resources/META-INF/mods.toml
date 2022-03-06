@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[39,)"
+loaderVersion="[40,)"
 license="MIT License"
 issueTrackerURL="https://github.com/onVoid/RottenLeather/issues"
 
@@ -18,9 +18,9 @@ description="Adds a way to convert Rotten Flesh into Leather or food."
 itemIcon="rottenleather:rotten_chunk"
 configBackground="minecraft:textures/block/stone.png"
 
-[[dependencies.coppersdelight]]
+[[dependencies.rottenleather]]
     modId="forge"
     mandatory=true
-    versionRange="[39,)"
+    versionRange="[40,)"
     ordering="NONE"
     side="BOTH"
