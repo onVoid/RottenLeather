@@ -9,10 +9,9 @@ import net.onvoid.rottenleather.RottenLeather;
 
 public class RottenLeatherLootModifiers {
 
-    private static final DeferredRegister<GlobalLootModifierSerializer<?>> LOOT_MODIFIERS = DeferredRegister.create(ForgeRegistries.LOOT_MODIFIER_SERIALIZERS, RottenLeather.MODID);
+    private static final DeferredRegister<GlobalLootModifierSerializer<?>> LOOT_MODIFIERS = DeferredRegister.create(ForgeRegistries.Keys.LOOT_MODIFIER_SERIALIZERS, RottenLeather.MODID);
 
-    public static final RegistryObject<AddItemLootModifier.Serializer> ADD_ITEM = LOOT_MODIFIERS.register("add_item",
-            AddItemLootModifier.Serializer::new);
+    public static final RegistryObject<AddItemLootModifier.Serializer> ADD_ITEM = LOOT_MODIFIERS.register("add_item", AddItemLootModifier.Serializer::new);
 
     public static void create(IEventBus bus) {
         LOOT_MODIFIERS.register(bus);
