@@ -25,6 +25,6 @@
   "type": "rottenleather:add_item",
   "item": "rottenleather:flesh_jerky",
   "minAmount": 2,
-  "maxAmount": 4,
+  "maxAmount": 3,
   "unique": true
 }
