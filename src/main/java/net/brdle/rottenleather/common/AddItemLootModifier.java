@@ -1,20 +1,25 @@
-package net.onvoid.rottenleather.common;
+package net.brdle.rottenleather.common;
 
-import com.google.gson.JsonObject;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.GsonHelper;
+import net.brdle.rottenleather.Util;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
-import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
+import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.common.loot.LootModifier;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
-import java.util.Random;
 
 public class AddItemLootModifier extends LootModifier {
+    public static final Codec<AddItemLootModifier> CODEC = RecordCodecBuilder.create(inst -> codecStart(inst)
+        .and(ForgeRegistries.ITEMS.getCodec().fieldOf("item").forGetter(g -> g.item))
+        .and(Codec.INT.fieldOf("minAmount").forGetter(g -> g.minAmount))
+        .and(Codec.INT.fieldOf("minAmount").forGetter(g -> g.maxAmount))
+        .and(Codec.BOOL.fieldOf("unique").forGetter(g -> g.unique))
+        .apply(inst, AddItemLootModifier::new));
     private final Item item;
     private final int minAmount;
     private final int maxAmount;
@@ -41,14 +46,19 @@ public class AddItemLootModifier extends LootModifier {
         if ((this.unique && generatedLoot.stream().anyMatch(stack -> stack.getItem().equals(this.item))) || (this.maxAmount < 1)) {
             return generatedLoot;
         }
-        int amount = new Random().nextInt(this.maxAmount + 1 - this.minAmount) + this.minAmount;
-        if (amount >= 1) {
-            generatedLoot.add(new ItemStack(this.item, amount));
-        }
-        return generatedLoot;
+        int amount = context.getRandom().nextInt(this.maxAmount + 1 - this.minAmount) + this.minAmount;
+        return (amount >= 1) ? Util.with(generatedLoot, new ItemStack(this.item, amount)) : generatedLoot;
     }
 
-    public static class Serializer extends GlobalLootModifierSerializer<AddItemLootModifier> {
+    /**
+     * Returns the registered codec for this modifier
+     */
+    @Override
+    public Codec<? extends IGlobalLootModifier> codec() {
+        return RottenLeatherLootModifiers.ADD_ITEM.get();
+    }
+
+    /*public static class Serializer extends GlobalLootModifierSerializer<AddItemLootModifier> {
 
         @Override
         public AddItemLootModifier read(ResourceLocation name, JsonObject object, LootItemCondition[] conditions) {
@@ -68,5 +78,5 @@ public class AddItemLootModifier extends LootModifier {
             json.addProperty("unique", instance.unique);
             return json;
         }
-    }
+    }*/
 }

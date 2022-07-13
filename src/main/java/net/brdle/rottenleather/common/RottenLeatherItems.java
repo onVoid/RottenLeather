@@ -1,5 +1,6 @@
-package net.onvoid.rottenleather.common;
+package net.brdle.rottenleather.common;
 
+import net.brdle.rottenleather.RottenLeather;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
@@ -9,7 +10,6 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import net.onvoid.rottenleather.RottenLeather;
 
 public class RottenLeatherItems {
 
