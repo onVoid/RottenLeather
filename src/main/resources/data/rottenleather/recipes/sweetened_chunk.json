@@ -5,7 +5,7 @@
       "item": "rottenleather:rotten_chunk"
     },
     {
-      "item": "minecraft:sugar"
+      "tag": "forge:sugar"
     }
   ],
   "result": {

@@ -1,4 +1,4 @@
-package net.brdle.rottenleather;
+package net.brnbrd.rottenleather;
 
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.world.item.ItemStack;

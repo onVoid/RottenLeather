@@ -1,7 +1,7 @@
 modLoader="javafml"
-loaderVersion="[41,)"
+loaderVersion="[47,)"
 license="MIT License"
-issueTrackerURL="https://github.com/brdle/RottenLeather/issues"
+issueTrackerURL="https://github.com/brnbrd/RottenLeather/issues"
 
 
 [[mods]]
@@ -9,18 +9,25 @@ modId="rottenleather"
 version="${file.jarVersion}"
 displayName="Rotten Leather"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/rotten-leather"
-updateJSONURL="https://onvoid.net/rottenleather/update.json"
+updateJSONURL="https://raw.githubusercontent.com/brnbrd/RottenLeather/1.20.1/update.json"
 logoFile="rottenleather.png"
 logoBlur=false
-credits="brdle"
-authors="brdle"
-description="Adds a way to convert Rotten Flesh into Leather or food."
+credits="brnbrd, championhestu"
+authors="brnbrd"
+description="Convert Rotten Flesh into Leather or food."
 itemIcon="rottenleather:rotten_chunk"
 configBackground="minecraft:textures/block/stone.png"
 
 [[dependencies.rottenleather]]
     modId="forge"
     mandatory=true
-    versionRange="[41.0.94,)"
+    versionRange="[47,)"
     ordering="NONE"
+    side="BOTH"
+
+[[dependencies.rottenleather]]
+    modId="additionaladditions"
+    mandatory=false
+    versionRange="[0,)"
+    ordering="AFTER"
     side="BOTH"

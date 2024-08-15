@@ -1,9 +1,9 @@
-package net.brdle.rottenleather;
+package net.brnbrd.rottenleather;
 
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
-import net.brdle.rottenleather.proxy.ClientProxy;
-import net.brdle.rottenleather.proxy.CommonProxy;
+import net.brnbrd.rottenleather.proxy.ClientProxy;
+import net.brnbrd.rottenleather.proxy.CommonProxy;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

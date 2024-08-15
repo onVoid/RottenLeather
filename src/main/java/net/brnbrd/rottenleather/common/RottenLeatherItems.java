@@ -1,10 +1,9 @@
-package net.brdle.rottenleather.common;
+package net.brnbrd.rottenleather.common;
 
-import net.brdle.rottenleather.RottenLeather;
+import net.brnbrd.rottenleather.RottenLeather;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -17,30 +16,27 @@ public class RottenLeatherItems {
 
     public static final RegistryObject<Item> ROTTEN_CHUNK = ITEMS.register("rotten_chunk", () ->
             new Item((new Item.Properties())
-                    .tab(CreativeModeTab.TAB_FOOD)
                     .food((new FoodProperties.Builder())
-                            .nutrition(8)
-                            .saturationMod(0.1F)
-                            .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.8F)
+                            .nutrition(9)
+                            .saturationMod(0.15F)
+                            .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.95F)
                             .meat()
                             .build())));
 
     public static final RegistryObject<Item> SWEETENED_CHUNK = ITEMS.register("sweetened_chunk", () ->
             new Item((new Item.Properties())
-                    .tab(CreativeModeTab.TAB_FOOD)
                     .food((new FoodProperties.Builder())
-                            .nutrition(8)
-                            .saturationMod(0.3F)
-                            .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.4F)
+                            .nutrition(9)
+                            .saturationMod(0.25F)
+                            .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.5F)
                             .meat()
                             .build())));
 
     public static final RegistryObject<Item> FLESH_JERKY = ITEMS.register("flesh_jerky", () ->
             new Item((new Item.Properties())
-                    .tab(CreativeModeTab.TAB_FOOD)
                     .food((new FoodProperties.Builder())
-                            .nutrition(8)
-                            .saturationMod(0.5F)
+                            .nutrition(10)
+                            .saturationMod(0.35F)
                             .meat()
                             .build())));
 

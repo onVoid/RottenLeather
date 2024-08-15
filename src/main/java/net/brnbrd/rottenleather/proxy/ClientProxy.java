@@ -1,4 +1,4 @@
-package net.brdle.rottenleather.proxy;
+package net.brnbrd.rottenleather.proxy;
 
 public class ClientProxy extends CommonProxy {
 

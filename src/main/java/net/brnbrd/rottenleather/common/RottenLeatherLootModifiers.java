@@ -1,7 +1,7 @@
-package net.brdle.rottenleather.common;
+package net.brnbrd.rottenleather.common;
 
 import com.mojang.serialization.Codec;
-import net.brdle.rottenleather.RottenLeather;
+import net.brnbrd.rottenleather.RottenLeather;
 import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
