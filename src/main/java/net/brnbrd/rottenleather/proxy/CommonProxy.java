@@ -5,9 +5,11 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.brnbrd.rottenleather.common.RottenLeatherItems;
 import net.brnbrd.rottenleather.common.RottenLeatherLootModifiers;
@@ -21,7 +23,18 @@ public class CommonProxy {
         IEventBus forgeBus = MinecraftForge.EVENT_BUS;
         RottenLeatherItems.create(modBus);
         RottenLeatherLootModifiers.create(modBus);
+        modBus.addListener(this::setup);
         modBus.addListener(this::buildContents);
+    }
+
+    public void setup(FMLCommonSetupEvent e) {
+        e.enqueueWork(() -> {
+            // Flammables
+
+            // Compostables
+            ComposterBlock.COMPOSTABLES.put(RottenLeatherItems.ROTTEN_CHUNK.get(), 0.85F);
+            ComposterBlock.COMPOSTABLES.put(RottenLeatherItems.SWEETENED_CHUNK.get(), 0.9F);
+        });
     }
 
     public void buildContents(BuildCreativeModeTabContentsEvent e) {

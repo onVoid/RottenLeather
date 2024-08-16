@@ -18,7 +18,7 @@ public class RottenLeatherItems {
             new Item((new Item.Properties())
                     .food((new FoodProperties.Builder())
                             .nutrition(9)
-                            .saturationMod(0.15F)
+                            .saturationMod(0.1F)
                             .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.95F)
                             .meat()
                             .build())));
@@ -36,7 +36,7 @@ public class RottenLeatherItems {
             new Item((new Item.Properties())
                     .food((new FoodProperties.Builder())
                             .nutrition(10)
-                            .saturationMod(0.35F)
+                            .saturationMod(0.4F)
                             .meat()
                             .build())));
 

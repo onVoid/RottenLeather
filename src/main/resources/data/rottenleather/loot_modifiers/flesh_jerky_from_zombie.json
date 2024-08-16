@@ -7,21 +7,15 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
+        "type": "#rottenleather:zombified",
         "flags": {
           "is_on_fire": true
         }
       }
     },
     {
-      "condition": "minecraft:entity_properties",
-      "entity": "this",
-      "predicate": {
-        "type": "minecraft:zombie"
-      }
-    },
-    {
       "condition": "minecraft:random_chance",
-      "chance": 0.3
+      "chance": 0.1
     }
   ],
   "type": "rottenleather:add_item",

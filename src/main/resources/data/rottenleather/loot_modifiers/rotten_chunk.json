@@ -24,7 +24,7 @@
   ],
   "type": "rottenleather:add_item",
   "item": "rottenleather:rotten_chunk",
-  "minAmount": 2,
-  "maxAmount": 3,
+  "minAmount": 1,
+  "maxAmount": 2,
   "unique": true
 }
