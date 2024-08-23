@@ -1,9 +1,11 @@
 {
   "replace": false,
   "entries": [
-    "rottenleather:flesh_jerky",
-    "rottenleather:rotten_chunk",
+    "rottenleather:flesh_jerky_desert_pyramid",
+    "rottenleather:flesh_jerky_dungeon",
     "rottenleather:flesh_jerky_from_zombie",
+    "rottenleather:rotten_chunk_desert_pyramid",
+    "rottenleather:rotten_chunk_dungeon",
     "rottenleather:rotten_chunk_from_zombie"
   ]
 }

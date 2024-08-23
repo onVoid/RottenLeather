@@ -18,28 +18,26 @@ public class AddItemLootModifier extends LootModifier {
             .and(ForgeRegistries.ITEMS.getCodec().fieldOf("item").forGetter(g -> g.item))
             .and(Codec.INT.fieldOf("minAmount").forGetter(g -> g.minAmount))
             .and(Codec.INT.fieldOf("maxAmount").forGetter(g -> g.maxAmount))
-            .and(Codec.BOOL.fieldOf("unique").forGetter(g -> g.unique))
             .apply(inst, AddItemLootModifier::new));
     protected final Item item;
     protected final int minAmount;
     protected final int maxAmount;
-    protected final boolean unique;
 
-    public AddItemLootModifier(LootItemCondition[] conditions, Item item, int minAmount, int maxAmount, boolean unique) {
+    public AddItemLootModifier(LootItemCondition[] conditions, Item item, int minAmount, int maxAmount) {
         super(conditions);
         this.item = item;
         this.minAmount = minAmount;
         this.maxAmount = maxAmount;
-        this.unique = unique;
     }
 
     @Override
     protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
-        if ((this.unique && generatedLoot.stream().anyMatch(stack -> stack.getItem().equals(this.item))) || (this.maxAmount < 1)) {
+        if (this.maxAmount < 1 || this.maxAmount < this.minAmount) {
             return generatedLoot;
         }
-        int amount = this.minAmount == this.maxAmount ? this.minAmount : context.getRandom().nextInt(this.maxAmount + 1 - this.minAmount) + this.minAmount;
-        return (amount >= 1) ? Util.with(generatedLoot, new ItemStack(this.item, amount)) : generatedLoot;
+        return Util.with(generatedLoot, this.item, (this.minAmount == this.maxAmount) ?
+            this.minAmount : context.getRandom().nextIntBetweenInclusive(this.minAmount, this.maxAmount)
+        );
     }
 
     @Override

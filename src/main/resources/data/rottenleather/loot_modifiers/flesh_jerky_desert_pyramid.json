@@ -1,0 +1,16 @@
+{
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:chests/desert_pyramid"
+    },
+    {
+      "condition": "minecraft:random_chance",
+      "chance": 0.25
+    }
+  ],
+  "type": "rottenleather:add_item",
+  "item": "rottenleather:flesh_jerky",
+  "minAmount": 1,
+  "maxAmount": 4
+}
