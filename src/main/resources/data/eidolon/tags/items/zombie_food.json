@@ -1,6 +1,10 @@
 {
   "replace": false,
   "values": [
-    "rottenleather:rotten_chunk"
+    "rottenleather:rotten_chunk",
+    {
+      "id": "casualness_delight:spicy_strips",
+      "required": false
+    }
   ]
 }
