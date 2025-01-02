@@ -1,0 +1,53 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "farmersdelight"
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cutting",
+        "ingredients": [
+          {
+            "item": "rottenleather:rotten_chunk"
+          }
+        ],
+        "result": [
+          {
+            "item": "minecraft:rotten_flesh",
+            "count": 8
+          }
+        ],
+        "tool": {
+          "tag": "forge:tools/knives"
+        }
+      }
+    },
+    {
+      "conditions": [
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:mod_loaded",
+            "modid": "farmersdelight"
+          }
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "rottenleather:rotten_chunk"
+          }
+        ],
+        "result": {
+          "item": "minecraft:rotten_flesh",
+          "count": 8
+        }
+      }
+    }
+  ]
+}
