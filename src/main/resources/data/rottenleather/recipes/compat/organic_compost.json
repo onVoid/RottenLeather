@@ -1,0 +1,37 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:item_exists",
+          "item": "farmersdelight:organic_compost"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "minecraft:dirt"
+          },
+          {
+            "item": "rottenleather:rotten_chunk"
+          },
+          {
+            "item": "farmersdelight:straw"
+          },
+          {
+            "item": "farmersdelight:straw"
+          },
+          {
+            "item": "farmersdelight:straw"
+          }
+        ],
+        "result": {
+          "item": "farmersdelight:organic_compost",
+          "count": 1
+        }
+      }
+    }
+  ]
+}

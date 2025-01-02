@@ -2,7 +2,8 @@
   "homepage": "https://www.curseforge.com/minecraft/mc-mods/rotten-leather",
   "1.20.1": {
     "2.0": "New textures by championhestu. Rotten Chunk now requires 9 Rotten Flesh.",
-    "2.1": "Fix Sweetened Chunk recipe."
+    "2.1": "Fix Sweetened Chunk recipe.",
+    "2.2": "Rotten Chunk now requires 8 Rotten Flesh instead of 9."
   },
   "promos": {
     "1.20.1-latest": "2.1",
