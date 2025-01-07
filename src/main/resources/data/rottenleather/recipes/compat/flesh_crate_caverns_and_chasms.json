@@ -5,7 +5,7 @@
       "conditions": [
         {
           "type": "forge:item_exists",
-          "item": "frightsdelight:flesh_crate"
+          "item": "caverns_and_chasms:rotten_flesh_block"
         }
       ],
       "recipe": {
@@ -19,7 +19,7 @@
           }
         ],
         "result": {
-          "item": "frightsdelight:flesh_crate",
+          "item": "caverns_and_chasms:rotten_flesh_block",
           "count": 1
         }
       }
